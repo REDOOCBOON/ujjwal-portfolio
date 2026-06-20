@@ -29,7 +29,7 @@ export default function Projects() {
       summary: 'Full-stack GenAI platform supporting 500+ resume evaluations and vector-based RAG indexing.',
       description:
         'CareerPilot AI utilises a multi-agent orchestration setup (Resume Analyzer, ATS Optimizer, Interview Coach, Career Advisor) built using LangChain and a ChromaDB vector database. It includes a JWT-secured FastAPI backend and a React dashboard delivering real-time skill gap analysis, interactive mock interviews, and dynamic question generation.',
-      githubUrl: 'https://github.com/ujjwal3rd/CareerPilot-AI',
+      githubUrl: 'https://github.com/REDOOCBOON/CareerPilot-AI',
     },
     {
       id: 'monitormail',
@@ -40,7 +40,7 @@ export default function Projects() {
       summary: 'Automated attendance tracking and SMTP email alert engine for 200+ students.',
       description:
         'MonitorMail handles automatic student attendance sheet uploading, parsing transcripts using pdfplumber on a Flask REST API backend, and launching multi-threaded SMTP email notifications. It reduces manual verification and reporting time by 80% with secure JWT authentication.',
-      githubUrl: 'https://github.com/ujjwal3rd/MonitorMail',
+      githubUrl: 'https://github.com/REDOOCBOON/MonitorMail',
     },
     {
       id: 'microplastics',
@@ -51,7 +51,7 @@ export default function Projects() {
       summary: 'Deep learning pipeline combining U-Net semantic segmentation and YOLOv8 object detection.',
       description:
         'An end-to-end computer vision classification pipeline designed to detect and categorise microplastics in aquatic environments. Employs U-Net for boundary segmentation and YOLOv8 for real-time bounding box identification. Results accepted for publication in a Scopus-indexed journal.',
-      githubUrl: 'https://github.com/ujjwal3rd/Microplastic-Detection',
+      githubUrl: 'https://github.com/REDOOCBOON/Microplastic-Detection',
     },
   ];
 

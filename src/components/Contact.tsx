@@ -57,8 +57,8 @@ export default function Contact() {
             {/* Social Links */}
             <div className="flex gap-3 pt-4 border-t border-white/5">
               {[
-                { icon: GithubIcon, label: 'GitHub', url: 'https://github.com/ujjwal3rd' },
-                { icon: LinkedinIcon, label: 'LinkedIn', url: 'https://linkedin.com/in/ujjwal-thakur' },
+                { icon: GithubIcon, label: 'GitHub', url: 'https://github.com/REDOOCBOON' },
+                { icon: LinkedinIcon, label: 'LinkedIn', url: 'https://www.linkedin.com/in/ujjwal-thakur-5361502b9/' },
                 { icon: HackerRankIcon, label: 'HackerRank', url: 'https://hackerrank.com/ujjwal3rd' },
               ].map((soc, idx) => {
                 const Icon = soc.icon;

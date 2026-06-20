@@ -130,8 +130,8 @@ export default function Hero() {
 
             <div className="flex items-center gap-3 ml-2 sm:ml-4">
               {[
-                { Icon: GithubIcon, label: 'GitHub', url: 'https://github.com/ujjwal3rd' },
-                { Icon: LinkedinIcon, label: 'LinkedIn', url: 'https://linkedin.com/in/ujjwal-thakur' },
+                { Icon: GithubIcon, label: 'GitHub', url: 'https://github.com/REDOOCBOON' },
+                { Icon: LinkedinIcon, label: 'LinkedIn', url: 'https://www.linkedin.com/in/ujjwal-thakur-5361502b9/' },
                 { Icon: HackerRankIcon, label: 'HackerRank', url: 'https://hackerrank.com/ujjwal3rd' },
               ].map(({ Icon, label, url }) => (
                 <Magnetic key={label}>

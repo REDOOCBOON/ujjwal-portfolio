@@ -77,8 +77,8 @@ export default function CommandPalette({
     { id: 'theme-toggle', title: `Switch to ${isDarkMode ? 'Light' : 'Dark'} Mode`, category: 'Preferences', icon: isDarkMode ? Sun : Moon, action: () => { toggleTheme(); setIsOpen(false); } },
 
     // Actions & Socials
-    { id: 'github', title: 'Open GitHub Profile', category: 'Social Links', icon: Globe, action: () => { window.open('https://github.com/ujjwal3rd', '_blank'); setIsOpen(false); } },
-    { id: 'linkedin', title: 'Open LinkedIn Profile', category: 'Social Links', icon: Globe, action: () => { window.open('https://linkedin.com/in/ujjwal-thakur', '_blank'); setIsOpen(false); } },
+    { id: 'github', title: 'Open GitHub Profile', category: 'Social Links', icon: Globe, action: () => { window.open('https://github.com/REDOOCBOON', '_blank'); setIsOpen(false); } },
+    { id: 'linkedin', title: 'Open LinkedIn Profile', category: 'Social Links', icon: Globe, action: () => { window.open('https://www.linkedin.com/in/ujjwal-thakur-5361502b9/', '_blank'); setIsOpen(false); } },
     { id: 'hackerrank', title: 'Open HackerRank Profile', category: 'Social Links', icon: Globe, action: () => { window.open('https://hackerrank.com/ujjwal3rd', '_blank'); setIsOpen(false); } },
     { id: 'email', title: 'Email Ujjwal (ujjwal3rd@gmail.com)', category: 'Actions', icon: Globe, action: () => { window.open('mailto:ujjwal3rd@gmail.com'); setIsOpen(false); } },
 

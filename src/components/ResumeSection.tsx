@@ -11,8 +11,8 @@ export default function ResumeSection() {
     email: 'ujjwal3rd@gmail.com',
     phone: '+91-8210052876',
     links: [
-      { label: 'LinkedIn', url: 'https://linkedin.com/in/ujjwal-thakur' },
-      { label: 'GitHub', url: 'https://github.com/ujjwal3rd' },
+      { label: 'LinkedIn', url: 'https://www.linkedin.com/in/ujjwal-thakur-5361502b9/' },
+      { label: 'GitHub', url: 'https://github.com/REDOOCBOON' },
       { label: 'HackerRank', url: 'https://hackerrank.com/ujjwal3rd' },
     ],
     summary:
