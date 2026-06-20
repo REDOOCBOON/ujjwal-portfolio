@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500&family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-mono: 'Fira Code', monospace;
+}
+
+:root {
+  /* Dark Mode Default Theme Variables */
+  --bg-primary: #030014;
+  --bg-secondary: #0b0724;
+  --bg-tertiary: #130f35;
+  --text-primary: #f3f4f6;
+  --text-secondary: #9ca3af;
+  --border-color: rgba(255, 255, 255, 0.08);
+  --border-glow: rgba(168, 85, 247, 0.3);
+  --accent-cyan: #06b6d4;
+  --accent-purple: #a855f7;
+  --accent-indigo: #6366f1;
+  --accent-glow: rgba(168, 85, 247, 0.15);
+  
+  --scrollbar-thumb: rgba(168, 85, 247, 0.5);
+  --scrollbar-track: #030014;
+
+  font-family: var(--font-sans);
+  color-scheme: dark;
+  scroll-behavior: auto; /* Let Lenis handle smooth scrolling */
+}
+
+/* Light Mode Overrides */
+:root.light {
+  --bg-primary: #fcfbfe;
+  --bg-secondary: #f4f2f9;
+  --bg-tertiary: #e9e6f3;
+  --text-primary: #0f0a20;
+  --text-secondary: #585566;
+  --border-color: rgba(0, 0, 0, 0.08);
+  --border-glow: rgba(168, 85, 247, 0.2);
+  --accent-cyan: #0891b2;
+  --accent-purple: #9333ea;
+  --accent-indigo: #4f46e5;
+  --accent-glow: rgba(168, 85, 247, 0.05);
+
+  --scrollbar-thumb: rgba(168, 85, 247, 0.4);
+  --scrollbar-track: #fcfbfe;
+
+  color-scheme: light;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  margin: 0;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Custom Scrollbar - Modern Standard */
+.custom-scroller {
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+  scrollbar-width: thin;
+}
+
+/* Custom Scrollbar - Webkit Fallback */
+@supports not (scrollbar-color: auto) {
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-purple);
+  }
+}
+
+/* Glow Background Effects */
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, var(--border-color) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--border-color) 1px, transparent 1px);
+}
+
+.aurora-blur {
+  filter: blur(100px);
+  pointer-events: none;
+}
+
+/* Glassmorphism Presets */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.015);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-color);
+}
+.light .glass-panel {
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-color);
+}
+
+.glass-panel-glow {
+  box-shadow: 0 0 25px var(--accent-glow);
+}
+
+/* Magnetic Hover Transitions */
+.magnetic-btn {
+  transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Code Terminal styles */
+.terminal-line {
+  font-family: var(--font-mono);
+}
+
+/* Interactive Starry background */
+.space-stars {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Hide cursor on tablet/mobile for performance */
+@media (max-width: 1024px) {
+  .custom-cursor {
+    display: none !important;
+  }
+}
+
+/* Utility Animations */
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(2deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.2; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.05); }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 8s ease-in-out infinite;
+}
+
+/* Command Palette Scroll Fix */
+.command-palette-modal {
+  animation: modal-fade-in 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes modal-fade-in {
+  from { opacity: 0; transform: scale(0.96) translate(-50%, -48%); }
+  to { opacity: 1; transform: scale(1) translate(-50%, -50%); }
+}
+
+/* Reduced Motion overrides */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-delay: 0s !important;
+    animation-duration: 0s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0s !important;
+    scroll-behavior: auto !important;
+  }
+  .aurora-blur, .animate-float, .animate-pulse-glow {
+    display: none !important;
+  }
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   Light Mode Theme Adaptation System
+   Adapts standard Tailwind colors/borders to match Ujjwal's premium light mode
+   without modifying individual React files.
+   ────────────────────────────────────────────────────────────────────────── */
+:root.light body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* Main background wrapper override */
+:root.light .relative.min-h-screen.bg-\[\#030014\] {
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Light mode stars opacity and color */
+:root.light .space-stars {
+  background-image: radial-gradient(rgba(0, 0, 0, 0.08) 1px, transparent 0) !important;
+  opacity: 0.25 !important;
+}
+
+/* Text overrides (excluding terminal and keep-dark nodes) */
+:root.light .text-white:not(.keep-dark):not(.keep-dark *) {
+  color: var(--text-primary) !important;
+}
+:root.light .text-gray-300:not(.keep-dark):not(.keep-dark *) {
+  color: var(--text-primary) !important;
+}
+:root.light .text-gray-400:not(.keep-dark):not(.keep-dark *) {
+  color: var(--text-secondary) !important;
+}
+:root.light .text-gray-500:not(.keep-dark):not(.keep-dark *) {
+  color: var(--text-secondary) !important;
+}
+:root.light .text-cyan-400:not(.keep-dark):not(.keep-dark *) {
+  color: var(--accent-cyan) !important;
+}
+:root.light .text-purple-300:not(.keep-dark):not(.keep-dark *) {
+  color: var(--accent-purple) !important;
+}
+
+/* Background overrides (excluding terminal and keep-dark nodes) */
+:root.light .bg-white\/5:not(.keep-dark):not(.keep-dark *) {
+  background-color: var(--bg-secondary) !important;
+}
+:root.light .bg-white\/10:not(.keep-dark):not(.keep-dark *) {
+  background-color: var(--bg-tertiary) !important;
+}
+:root.light .bg-white\/\[0\.01\]:not(.keep-dark):not(.keep-dark *) {
+  background-color: var(--bg-secondary) !important;
+}
+:root.light .bg-black\/15:not(.keep-dark):not(.keep-dark *) {
+  background-color: var(--bg-secondary) !important;
+}
+:root.light .bg-black\/20:not(.keep-dark):not(.keep-dark *) {
+  background-color: var(--bg-secondary) !important;
+}
+:root.light .bg-black\/30:not(.keep-dark):not(.keep-dark *) {
+  background-color: var(--bg-tertiary) !important;
+}
+:root.light .bg-black\/45:not(.keep-dark):not(.keep-dark *) {
+  background-color: var(--bg-secondary) !important;
+}
+:root.light .bg-black\/50:not(.keep-dark):not(.keep-dark *) {
+  background-color: var(--bg-tertiary) !important;
+}
+
+/* Border overrides (excluding terminal and keep-dark nodes) */
+:root.light .border-white\/10:not(.keep-dark):not(.keep-dark *),
+:root.light .border-white\/5:not(.keep-dark):not(.keep-dark *) {
+  border-color: var(--border-color) !important;
+}
+
+/* Glassmorphism panel styling override */
+:root.light .glass-panel:not(.keep-dark):not(.keep-dark *) {
+  background: rgba(255, 255, 255, 0.45) !important;
+  border-color: var(--border-color) !important;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.04) !important;
+}
+
+/* Input, textarea, kbd element styling overrides */
+:root.light input:not(.keep-dark):not(.keep-dark *),
+:root.light textarea:not(.keep-dark):not(.keep-dark *) {
+  color: var(--text-primary) !important;
+  background-color: var(--bg-secondary) !important;
+  border-color: var(--border-color) !important;
+}
+:root.light kbd {
+  border-color: var(--border-color) !important;
+  color: var(--text-secondary) !important;
+  background-color: var(--bg-tertiary) !important;
+}
+
+/* Project detail dialog overlay blur */
+:root.light .fixed.inset-0.bg-black\/80 {
+  background-color: rgba(255, 255, 255, 0.7) !important;
+}
+:root.light .absolute.inset-0.bg-gradient-to-t.from-\[\#030014\] {
+  background-image: linear-gradient(to top, var(--bg-primary), transparent) !important;
+}
+:root.light .absolute.inset-0.bg-gradient-to-t.from-black\/80 {
+  background-image: linear-gradient(to top, rgba(255, 255, 255, 0.8), transparent) !important;
+}
+
+/* Ambient glows scale back for light mode readability */
+:root.light .aurora-blur {
+  opacity: 0.12 !important;
+  filter: blur(140px) !important;
+}
+
